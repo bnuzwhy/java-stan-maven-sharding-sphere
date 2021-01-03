@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="db-read-write" />
+        <module name="sub-table" />
+        <module name="sub-db-table" />
+        <module name="sub-table-read-write" />
+        <module name="sub-db-table-read-write" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="db-read-write" options="-parameters" />
+      <module name="java-stan-maven-sharding-sphere" options="-parameters" />
+      <module name="sub-db-table" options="-parameters" />
+      <module name="sub-db-table-read-write" options="-parameters" />
+      <module name="sub-table" options="-parameters" />
+      <module name="sub-table-read-write" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,32 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: java-stan-maven-sharding-sphere
+  shardingsphere:
+    datasource:
+      names: master,slave
+      #主库
+      master:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql:///master?serverTimezone=UTC
+        username: root
+        password: wanghongyu
+      #从库
+      slave:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql:///slave?serverTimezone=UTC
+        username: root
+        password: wanghongyu
+    #读写分离
+    masterslave:
+      load-balance-algorithm-type: round_robin
+      name: ms
+      master-data-source-name: master
+      slave-data-source-names: slave
+    #打印sql
+    props:
+      sql:
+        show: true

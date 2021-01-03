@@ -1,0 +1,6 @@
+# Project exclude paths
+/db-read-write/target/
+/sub-db-table/target/
+/sub-db-table-read-write/target/
+/sub-table/target/
+/sub-table-read-write/target/

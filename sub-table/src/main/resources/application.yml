@@ -1,0 +1,24 @@
+server:
+  port: 9001
+
+spring:
+  shardingsphere:
+    props:
+      sql:
+        show: true
+    datasource:
+      names: master
+      master:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/master?serverTimezone=UTC
+        username: root
+        password: wanghongyu
+    sharding:
+      tables:
+        tab_user:
+          actual-data-nodes: master.tab_user$->{0..2}
+          table-strategy:
+            inline:
+              sharding-column: id
+              algorithm-expression: tab_user$->{id%3}
